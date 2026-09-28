@@ -42,9 +42,35 @@ portfolio/
 ├── index.html              # All page content (single page)
 ├── css/style.css           # Styling + light/dark themes + responsive
 ├── js/main.js              # Theme toggle, mobile nav, scroll reveal
-├── assets/                 # Drop images here (e.g. a headshot)
-└── .github/workflows/deploy.yml   # GitHub Pages deployment
+├── assets/profile.jpg      # Headshot (shown on the website only)
+├── build_pdf.py            # Generates the clean, link-rich CV PDF
+├── cv.pdf                  # Generated output (auto-rebuilt — see below)
+└── .github/workflows/deploy.yml   # GitHub Pages deployment + PDF rebuild
 ```
+
+## The CV PDF (auto-generated)
+
+`cv.pdf` is a clean, **AI-readable** version of the CV: no photo, no website
+chrome, but with **real clickable links** (email, phone, LinkedIn, GitHub).
+It's what visitors download from the "Download CV (PDF)" button.
+
+**It rebuilds automatically** whenever the site changes, via two mechanisms:
+
+1. **Locally** — a git `post-commit` hook (`.git/hooks/post-commit`) runs
+   `build_pdf.py` after every commit and stages the fresh `cv.pdf`.
+2. **On push** — the GitHub Actions workflow installs WeasyPrint and regenerates
+   `cv.pdf` before deploying, so the published site always has a current PDF.
+
+To rebuild manually:
+
+```bash
+pip install weasyprint
+python3 build_pdf.py            # writes ./cv.pdf
+```
+
+> Note: the local hook lives in `.git/hooks/` and is **not** committed. If you
+> clone this repo elsewhere, re-create it (or just rely on the CI rebuild, which
+> is the source of truth for the published PDF).
 
 ## Customizing
 
