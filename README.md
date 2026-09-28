@@ -50,9 +50,13 @@ portfolio/
 
 ## The CV PDF (auto-generated)
 
-`cv.pdf` is a clean, **AI-readable** version of the CV: no photo, no website
-chrome, but with **real clickable links** (email, phone, LinkedIn, GitHub).
-It's what visitors download from the "Download CV (PDF)" button.
+**Primary download** is the Google Drive copy — the "Download CV (PDF)" button
+links straight to the Drive document's PDF export.
+
+`cv.pdf` is the **fallback**: a clean, **AI-readable** version of the CV (no
+photo, no website chrome, but with **real clickable links** — email, phone,
+LinkedIn, GitHub), generated from this site and offered as a direct-file
+alternative when the Drive link is unavailable.
 
 **It rebuilds automatically** whenever the site changes, via two mechanisms:
 
