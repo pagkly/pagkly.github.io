@@ -172,6 +172,9 @@ def build(out_path: str) -> None:
     html = re.sub(r'<a[^>]*href="cv\.pdf"[^>]*>.*?</a>', '', html, flags=re.S)
     html = re.sub(r'<button[^>]*id="printBtn"[^>]*>.*?</button>', '', html, flags=re.S)
 
+    # Make the phone link open WhatsApp in the PDF too (consistent with the site).
+    html = html.replace('href="tel:+6287723091996"', 'href="https://wa.me/6287723091996"')
+
     stamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     weasyprint.HTML(string=html, base_url=HERE).write_pdf(out_path)
 
