@@ -190,6 +190,25 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
 .tags li:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .tags--inline { margin-top: 16px; }
 
+/* ---------- Tool logos ---------- */
+.tool-logos { margin-top: 30px; }
+.tool-logos__label {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 16px; text-align: center;
+}
+.tool-logos__grid {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+  padding: 24px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm);
+}
+.tool-logo {
+  width: 58px; height: 58px; display: grid; place-items: center;
+  background: #ffffff; border: 1px solid var(--border); border-radius: 12px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.tool-logo:hover { transform: translateY(-4px) scale(1.06); box-shadow: var(--shadow-md); border-color: var(--accent); }
+.tool-logo img { width: 30px; height: 30px; display: block; }
+
 /* ---------- Experience timeline ---------- */
 .timeline { position: relative; padding-left: 8px; }
 .timeline::before { content: ""; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }

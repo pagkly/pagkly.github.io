@@ -43,6 +43,7 @@ portfolio/
 ├── css/style.css           # Styling + light/dark themes + responsive
 ├── js/main.js              # Theme toggle, mobile nav, scroll reveal
 ├── assets/profile.jpg      # Headshot (shown on the website only)
+├── assets/logos/           # Tool logos (SVG, shown in the Skills section)
 ├── build_pdf.py            # Generates the clean, link-rich CV PDF
 ├── cv.pdf                  # Generated output (auto-rebuilt — see below)
 └── .github/workflows/deploy.yml   # GitHub Pages deployment + PDF rebuild
