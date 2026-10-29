@@ -79,4 +79,37 @@
   /* ---------- Footer year ---------- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- Screenshot lightbox ---------- */
+  const shots = document.querySelectorAll(".project-card__shots .shot");
+  if (shots.length) {
+    const lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.innerHTML = '<img alt="" />';
+    const lbImg = lb.querySelector("img");
+    document.body.appendChild(lb);
+
+    function closeLb() {
+      lb.classList.remove("is-open");
+      lbImg.removeAttribute("src");
+      document.body.style.overflow = "";
+    }
+
+    shots.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        const img = a.querySelector("img");
+        lbImg.src = img.getAttribute("src");
+        lbImg.alt = img.getAttribute("alt") || "";
+        lb.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+    lb.addEventListener("click", closeLb);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeLb();
+    });
+  }
 })();

@@ -248,6 +248,19 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
 .project-card__points li:last-child { margin-bottom: 0; }
 .project-card__points li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); opacity: 0.7; }
 
+/* Project card screenshots */
+.project-card__shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
+.project-card__shots--single { grid-template-columns: 1fr; }
+.project-card__shots .shot { display: block; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; cursor: zoom-in; background: var(--surface); }
+.project-card__shots .shot img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center top; transition: transform 0.25s ease; }
+.project-card__shots .shot:hover img { transform: scale(1.04); }
+.project-card__shots .shot--wide { grid-column: 1 / -1; }
+
+/* Screenshot lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 200; display: none; place-items: center; padding: 28px; background: rgba(10, 12, 18, 0.9); backdrop-filter: blur(4px); cursor: zoom-out; }
+.lightbox.is-open { display: grid; }
+.lightbox img { max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 10px; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55); }
+
 /* ---------- Education ---------- */
 .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; }
