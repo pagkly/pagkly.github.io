@@ -46,7 +46,7 @@ html, body {
 /* ---- Hide all website chrome ---- */
 .nav, .theme-toggle, .nav__burger, .btn, #printBtn, .hero__cta,
 .footer, .hero__media, .hero__photo-wrap, .hero__photo, .hero__card,
-.hero::before, .section__eyebrow, .skill-group__logos, .project-card__shots,
+.hero::before, .section__eyebrow, .tags li img, .project-card__shots,
 .lightbox { display: none !important; }
 
 /* Force every reveal element visible (no JS in PDF) */

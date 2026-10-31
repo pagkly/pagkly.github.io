@@ -190,15 +190,9 @@ h1, h2, h3 { line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
 .tags li:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .tags--inline { margin-top: 16px; }
 
-/* ---------- Tool logos (per skill group) ---------- */
-.skill-group__logos { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.tool-logo {
-  width: 44px; height: 44px; display: grid; place-items: center;
-  background: #ffffff; border: 1px solid var(--border); border-radius: 10px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-}
-.tool-logo:hover { transform: translateY(-4px) scale(1.06); box-shadow: var(--shadow-md); border-color: var(--accent); }
-.tool-logo img { width: 24px; height: 24px; display: block; }
+/* ---------- Inline tool logos inside tags ---------- */
+.tags li { display: inline-flex; align-items: center; gap: 7px; }
+.tags li img { width: 18px; height: 18px; padding: 2px; background: #ffffff; border-radius: 4px; flex: none; }
 
 /* ---------- Experience timeline ---------- */
 .timeline { position: relative; padding-left: 8px; }
